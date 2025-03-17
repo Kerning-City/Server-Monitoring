@@ -205,10 +205,11 @@ tail -f /var/log/user_logins_cron.log
 ---
 
 <h2 id="실행-결과">📌 7. 실행 결과</h2>
-- system_errors.log  
+
+### system_errors.log  
   <img src="image.png" alt="system_errors.log" width="500">
 
-- cpu_usage.log  
+### cpu_usage.log  
   <img src="image-1.png" alt="cpu_usage.log" width="500">
 
 

@@ -62,7 +62,7 @@
 
 ## 📌 2. 쉘 스크립트 생성
 
-모든 스크립트는 `/home/ubuntu/mission/` 폴더에 위치해야 합니다.
+모든 스크립트는 `/home/ubuntu/mission/` 폴더에 위치.
 
 ### `cpu_monitor.sh` (CPU 사용량 확인)
 ```bash
@@ -83,6 +83,7 @@ if (( $(echo "$CPU_USAGE > $THRESHOLD" | bc -l) )); then
     kill -9 $HIGH_CPU_PROCESS
 fi
 ```
+
 ### `disk_monitor.sh` (디스크 사용량 모니터링)
 ```bash
 #!/bin/bash
@@ -156,7 +157,7 @@ chmod +x /home/ubuntu/mission/*.sh
 
 ## 📌 4. 크론탭 설정
 
-크론탭을 열어서 스크립트를 주기적으로 실행하도록 설정합니다.
+크론탭을 열어서 스크립트를 주기적으로 실행하도록 설정.
 
 ```bash
 crontab -e
@@ -172,7 +173,8 @@ crontab -e
 */5 * * * * /bin/bash /home/ubuntu/mission/user_logins.sh >> /var/log/user_logins_cron.log 2>&1
 ```
 
-✅ 실행 간격을 조정하고 싶다면 `*/10 * * * *` (10분마다), `0 * * * *` (매시간) 등의 값을 변경하면 됩니다.
+✅ `2>&1` 표준 출력 (stdout), 표준 에러 (stderr)를 로그 파일에 저장 <br>
+✅ 실행 간격을 조정하고 싶다면 `*/10 * * * *` (10분마다), `0 * * * *` (매시간) 등의 값을 변경.
 
 ---
 
@@ -182,7 +184,7 @@ crontab -e
 tail -f /var/log/syslog | grep CRON
 ```
 
-✅ **크론탭이 정상적으로 실행되는지 확인!**
+✅ **크론탭이 정상적으로 실행되는지 확인**
 
 ---
 
@@ -197,7 +199,7 @@ tail -f /var/log/system_errors_cron.log
 tail -f /var/log/user_logins_cron.log
 ```
 
-✅ **각 스크립트가 로그를 정상적으로 저장하고 있는지 확인!**
+✅ **각 스크립트가 로그를 정상적으로 저장하고 있는지 확인**
 
 ---
 
